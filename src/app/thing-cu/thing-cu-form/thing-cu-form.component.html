@@ -1,0 +1,45 @@
+<div class="" id="add_thing_table">
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+<div class="x_panel">
+ <div class="x_content">
+      <h2 style="text-align: center">Thing</h2>
+    <br/>
+    <form id="demo-form2" #thingForm="ngForm"  class="form-horizontal form-label-left" (ngSubmit)="processForm(thingForm)">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Address-2"> Name <span class="required">*</span>
+             </label>
+             <div class="col-md-9 col-sm-9 col-xs-12">
+                <textarea id="add_message" required class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
+                   data-parsley-validation-threshold="10" name="name" #name="ngModel" [(ngModel)]="thing.name"></textarea>
+             </div>
+          </div>
+          <div class="form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Mobile-Number">Description
+             </label>
+             <div class="col-md-9 col-sm-9 col-xs-12">
+                <input type="text" id="thing_description" class="form-control col-md-7 col-xs-12" required name="description" #description="ngModel" [(ngModel)]="thing.description">
+             </div>
+          </div>
+          <div class="form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="usage-Address"> Usage
+             </label>
+             <div class="col-md-9 col-sm-9 col-xs-12">
+                <input type="text" id="thing_usage" class="form-control col-md-7 col-xs-12" required name="usage" #usage="ngModel" [(ngModel)]="thing.usage">
+             </div>
+          </div>
+       </div>
+       <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="ln_solid"></div>
+          <div class="form-group">
+             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <button type="submit" class="btn btn-success"><i class="icon_spac fa fa-floppy-o"></i>Add</button>
+                <button class="btn btn-primary" type="button" (click)="redirectBack()" data-launch-view="thing_table"><i class="icon_spac fa fa-close"></i>Cancel</button>
+             </div>
+          </div>
+       </div>
+    </form>
+ </div>
+</div>
+<!-- x_panel end -->
+</div>
